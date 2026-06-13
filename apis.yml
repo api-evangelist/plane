@@ -1,0 +1,81 @@
+name: Plane
+description: >-
+  Plane is an open-source, AI-native project management platform that enables
+  teams to manage issues, cycles, modules, pages, analytics, and workspace
+  members through a comprehensive REST API. Available as a fully managed cloud
+  service or self-hosted on your own infrastructure using Docker or Kubernetes,
+  Plane provides 180+ REST endpoints organized around predictable resource-oriented
+  URLs with JSON request and response bodies. The API supports OAuth 2.0 for
+  third-party app authorization, personal access token authentication, HMAC-signed
+  webhooks for real-time event notifications, and typed SDKs for Python and
+  Node.js. Plane also ships an official Model Context Protocol (MCP) server to
+  enable AI agents to interact with your workspace programmatically.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/plane/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - Project Management
+  - Issues
+  - Cycles
+  - Modules
+  - Pages
+  - Analytics
+  - Workspace
+  - Open Source
+  - Self-Hosted
+  - AI
+apis:
+  - name: Plane REST API
+    description: >-
+      The Plane REST API provides 180+ endpoints for managing all aspects of
+      project management workspaces including projects, work items, cycles,
+      modules, pages, analytics, intake, and team members. The API uses
+      standard HTTP verbs, cursor-based pagination, and JSON request/response
+      bodies with predictable resource-oriented URLs. Authentication is
+      supported via personal access tokens (X-API-Key header) or OAuth 2.0
+      bearer tokens for third-party applications.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developers.plane.so/api-reference/introduction
+    baseURL: https://api.plane.so/api/v1/
+    tags:
+      - Project Management
+      - Issues
+      - Cycles
+      - Modules
+      - Pages
+      - Analytics
+      - Workspace
+    properties:
+      - type: Documentation
+        url: https://developers.plane.so/api-reference/introduction
+      - type: OpenAPI
+        url: https://developers.plane.so/api-reference/introduction
+common:
+  - type: Website
+    url: https://plane.so/
+  - type: Documentation
+    url: https://developers.plane.so/
+  - type: GitHubOrg
+    url: https://github.com/makeplane
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/planepowers/
+  - type: Blog
+    url: https://plane.so/blog
+  - type: Pricing
+    url: https://plane.so/pricing
+  - type: StatusPage
+    url: https://status.plane.so/
+  - type: X
+    url: https://twitter.com/planepowers
+  - type: Plans
+    url: plans/plane-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/plane-rate-limits.yml
+  - type: FinOps
+    url: finops/plane-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+aid: plane

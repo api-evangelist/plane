@@ -1,0 +1,110 @@
+name: Plane Plans and Pricing
+description: >-
+  Plane offers four pricing tiers for both cloud-hosted and self-hosted
+  deployments, billed per seat per month. All plans include core project
+  management features with higher tiers unlocking advanced collaboration,
+  automation, enterprise security, and AI capabilities. Self-hosted pricing
+  matches cloud pricing with full data ownership and compliance support.
+specificationVersion: '0.1'
+created: '2026-06-13'
+modified: '2026-06-13'
+plans:
+  - name: Free
+    description: >-
+      Core project management for small teams up to 12 seats. Includes
+      essential project layouts, work item tracking, intake, estimates,
+      project pages, and 500 AI credits per seat per month.
+    url: https://plane.so/pricing
+    price: 0.00
+    currency: USD
+    per: seat/month
+    billing: monthly
+    seatLimit: 12
+    features:
+      - Core project management
+      - All layouts and views (Board, List, Spreadsheet, Gantt, Calendar)
+      - Work item intake
+      - Estimates
+      - Project pages
+      - 500 AI credits per seat per month
+      - Community support
+
+  - name: Pro
+    description: >-
+      Professional project management for growing teams with unlimited seats.
+      Adds workspace Wiki, time tracking, custom work item types, templates,
+      dashboards, initiatives, teamspaces, integrations, and SSO via SAML.
+      1,000 AI credits per seat per month.
+    url: https://plane.so/pro
+    price: 6.00
+    currency: USD
+    per: seat/month
+    billing: monthly
+    annualDiscount: 25%
+    annualPrice: 4.50
+    seatLimit: unlimited
+    guestSlots: 5 per paid seat
+    features:
+      - Everything in Free
+      - Unlimited seats
+      - Custom work item types
+      - Workspace Wiki
+      - Time tracking
+      - Templates
+      - Dashboards
+      - Initiatives
+      - Teamspaces
+      - Integrations
+      - SSO via SAML
+      - 1000 AI credits per seat per month
+      - Priority support
+
+  - name: Business
+    description: >-
+      Advanced project management for scaling organizations. Adds project
+      templates, recurring work items, intake forms with email, nested pages,
+      single workflow control, customer profiles, and advanced dashboard
+      widgets. 2,000 AI credits per seat per month.
+    url: https://plane.so/pricing
+    price: 13.00
+    currency: USD
+    per: seat/month
+    billing: monthly
+    annualDiscount: 13%
+    seatLimit: unlimited
+    guestSlots: 5 per paid seat
+    features:
+      - Everything in Pro
+      - Project templates
+      - Recurring work items
+      - Intake forms with email ingestion
+      - Nested pages
+      - Single workflow control
+      - Customer profiles
+      - Advanced dashboard widgets
+      - 2000 AI credits per seat per month
+      - Dedicated support
+
+  - name: Enterprise Grid
+    description: >-
+      Enterprise-grade project management for large organizations requiring
+      flexible deployments, granular access controls, multiple approval
+      workflows, LDAP, audit logs, and managed deployments. Custom pricing
+      based on seats and deployment requirements.
+    url: https://plane.so/pricing
+    price: custom
+    currency: USD
+    per: seat/month
+    billing: custom
+    seatLimit: unlimited
+    features:
+      - Everything in Business
+      - Flexible AI credits
+      - Managed deployments
+      - Granular access controls (GAC)
+      - Multiple workflows with approvals
+      - LDAP support and IdP group sync
+      - Audit logs
+      - Migration services
+      - Enterprise SLA
+      - Dedicated account manager

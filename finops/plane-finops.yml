@@ -1,0 +1,108 @@
+name: Plane FinOps
+description: >-
+  FinOps framework for managing Plane project management costs aligned with
+  FOCUS 1.0 principles. Plane uses per-seat billing via Stripe, with costs
+  driven by the number of Admin and Member seats purchased across workspaces.
+  Guest users are allocated at 5 slots per paid seat on Pro and Business plans
+  at no additional charge. AI features are governed by a separate monthly
+  credit pool that is workspace-wide and does not affect base seat subscriptions.
+specificationVersion: '1.0'
+created: '2026-06-13'
+modified: '2026-06-13'
+provider: Plane
+providerURL: https://plane.so/
+billingURL: https://docs.plane.so/workspaces-and-users/billing-and-plans
+focusVersion: '1.0'
+
+costDrivers:
+  - name: Seat Count
+    description: >-
+      Primary cost driver. Each Admin and Member seat incurs the per-seat fee
+      for the active plan. Seats represent billing capacity; removing members
+      without removing seats does not reduce the bill.
+    unit: seat
+    granularity: workspace
+    notes: Guests do not count as billable seats on Free, Pro, or Business plans.
+
+  - name: Plan Tier
+    description: >-
+      The selected plan tier determines the per-seat price. Free (up to 12
+      seats, $0), Pro ($6/seat/month), Business ($13/seat/month), Enterprise
+      Grid (custom). Annual billing reduces Pro by 25%.
+    unit: plan
+    granularity: workspace
+
+  - name: AI Credits
+    description: >-
+      AI features consume workspace-wide credit pools allocated monthly per
+      seat. Free: 500 credits/seat, Pro: 1,000 credits/seat, Business: 2,000
+      credits/seat. Unused credits roll over for one month. Top-ups are
+      available at $2 per 1,000 credits when the pool is exhausted.
+    unit: credit
+    granularity: workspace
+    topUpPrice: 2.00
+    topUpUnit: 1000 credits
+    currency: USD
+    notes: Cloud-only. Self-hosted deployments use their own AI provider API keys.
+
+billing:
+  model: per-seat
+  currency: USD
+  cycles:
+    - monthly
+    - annual
+  processor: Stripe
+  proratedAdjustments: true
+  prorationPolicy: >-
+    New seats added mid-cycle are charged immediately at a prorated rate.
+    Seats removed mid-cycle generate prorated credits applied to the next
+    invoice. Applies to both monthly and annual billing cycles.
+  failurePolicy: >-
+    Failed payments trigger 3-5 automatic retry attempts over 14 days.
+    Cloud workspaces are cancelled after 14 days of unresolved payment
+    failure; self-hosted licences are cancelled after 7 days.
+  refundPolicy: No refunds except in exceptional circumstances via support.
+
+costOptimization:
+  - strategy: Annual Billing
+    description: >-
+      Switch from monthly to annual billing on the Pro plan to save 25% per
+      seat per year. Business annual savings are approximately 13%.
+    applicablePlans:
+      - Pro
+      - Business
+
+  - strategy: Seat Right-Sizing
+    description: >-
+      Regularly audit seat count versus active Members and Admins. Removing
+      unused seats is required to reduce billing; simply removing users from
+      the workspace is insufficient.
+    guidance: https://docs.plane.so/workspaces-and-users/billing-and-plans
+
+  - strategy: Guest Allocation
+    description: >-
+      Leverage the 5 free Guest slots per paid seat for external collaborators
+      and stakeholders who need read or limited access without consuming a
+      billable seat.
+    applicablePlans:
+      - Pro
+      - Business
+
+  - strategy: Self-Hosting
+    description: >-
+      Self-hosted Community Edition is free and open-source. Commercial and
+      Airgapped self-hosted editions use the same per-seat pricing as cloud
+      but enable full data ownership, compliance control, and custom AI
+      provider keys — eliminating AI credit top-up costs.
+    documentation: https://developers.plane.so/self-hosting/editions-and-versions
+
+  - strategy: AI Credit Management
+    description: >-
+      Monitor workspace AI credit consumption to avoid unexpected top-up
+      charges at $2 per 1,000 credits. Unused credits roll over for one
+      month; unused top-up credits do not automatically roll over beyond
+      that window.
+    applicablePlans:
+      - Free
+      - Pro
+      - Business

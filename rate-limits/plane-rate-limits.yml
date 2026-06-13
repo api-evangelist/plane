@@ -1,0 +1,42 @@
+name: Plane API Rate Limits
+description: >-
+  The Plane REST API enforces a rate limit of 60 requests per minute per API
+  key or OAuth client. Rate limit status is communicated via response headers
+  on every API request. When the rate limit is exceeded, the API returns a
+  429 Too Many Requests status code. The rate limit counter resets every 60
+  seconds. Self-hosted deployments can override the default rate limit via
+  the env.api_key_rate_limit configuration value in Helm or environment
+  variables.
+specificationVersion: '0.1'
+created: '2026-06-13'
+modified: '2026-06-13'
+rateLimits:
+  - name: Standard API Rate Limit
+    description: >-
+      Default rate limit applied to all API requests made with a personal
+      access token or OAuth 2.0 bearer token. Applies per API key or OAuth
+      client across all endpoints.
+    scope: per API key
+    requests: 60
+    period: minute
+    periodSeconds: 60
+    headers:
+      - name: X-RateLimit-Remaining
+        description: Number of requests remaining in the current rate limit window
+      - name: X-RateLimit-Reset
+        description: UTC epoch timestamp when the current rate limit window resets
+    errorCode: 429
+    errorMessage: Too Many Requests
+    documentation: https://developers.plane.so/api-reference/introduction
+
+  - name: Self-Hosted Custom Rate Limit
+    description: >-
+      Administrators of self-hosted Plane deployments can configure a custom
+      rate limit by setting the api_key_rate_limit environment variable or
+      the equivalent Helm value. The configured value overrides the default
+      60 requests per minute limit for that instance.
+    scope: per API key (self-hosted)
+    requests: configurable
+    period: minute
+    configuration: env.api_key_rate_limit
+    documentation: https://github.com/makeplane/plane/issues/9034
