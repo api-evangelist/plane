@@ -1,0 +1,35 @@
+{
+  "blog": {
+    "url": "https://plane.so/blog",
+    "rss": null,
+    "note": "No RSS or Atom feed discovered. Blog is rendered as a JavaScript SPA with no machine-readable feed link tags. Posts confirmed active as of 2026-06-13.",
+    "last_checked": "2026-06-13",
+    "sample_posts": [
+      {
+        "title": "Introducing Enterprise Grid",
+        "url": "https://plane.so/blog/introducing-enterprise-grid",
+        "date": "2026-06-12"
+      },
+      {
+        "title": "Introducing Custom Workflows and Approval Flows",
+        "url": "https://plane.so/blog/introducing-custom-workflows-and-approval-flows",
+        "date": "2026-06-11"
+      },
+      {
+        "title": "Introducing Granular Access Control (GAC), LDAP, IdP group sync",
+        "url": "https://plane.so/blog/introducing-granular-access-control-gac-ldap-idp-group-sync",
+        "date": "2026-06-10"
+      },
+      {
+        "title": "Introducing Workspace Work Item Types and Hierarchy",
+        "url": "https://plane.so/blog/introducing-workspace-work-item-types-hierarchy",
+        "date": "2026-06-09"
+      },
+      {
+        "title": "Introducing Plane Runner and Scheduled Automations",
+        "url": "https://plane.so/blog/introducing-plane-runner-and-scheduled-automations",
+        "date": "2026-06-08"
+      }
+    ]
+  }
+}

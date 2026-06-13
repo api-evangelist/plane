@@ -1,0 +1,77 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "plane": "https://plane.so/vocab#",
+    "api": "https://developers.plane.so/vocab#",
+
+    "Workspace": "plane:Workspace",
+    "Project": "plane:Project",
+    "WorkItem": "plane:WorkItem",
+    "Cycle": "plane:Cycle",
+    "Module": "plane:Module",
+    "Label": "plane:Label",
+    "State": "plane:State",
+    "Member": "plane:Member",
+    "Page": "plane:Page",
+    "Intake": "plane:Intake",
+    "Asset": "plane:Asset",
+    "Comment": "plane:Comment",
+    "Link": "plane:Link",
+    "Attachment": "plane:Attachment",
+    "Webhook": "plane:Webhook",
+
+    "workspaceSlug": "plane:workspaceSlug",
+    "projectId": "plane:projectId",
+    "cycleId": "plane:cycleId",
+    "moduleId": "plane:moduleId",
+    "stateId": "plane:stateId",
+    "labelId": "plane:labelId",
+    "issueId": "plane:issueId",
+    "priority": "plane:priority",
+    "sequence_id": "plane:sequence_id",
+    "estimate_point": "plane:estimate_point",
+    "completed_at": "plane:completed_at",
+    "archived_at": "plane:archived_at",
+    "start_date": "plane:start_date",
+    "due_date": "plane:due_date",
+    "sort_order": "plane:sort_order",
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "identifier": "schema:identifier",
+    "url": "schema:url",
+    "created_at": "schema:dateCreated",
+    "updated_at": "schema:dateModified",
+    "member": "schema:member",
+    "author": "schema:author",
+    "image": "schema:image",
+    "color": "schema:color",
+
+    "APIReference": "api:APIReference",
+    "baseURL": "api:baseURL",
+    "authMethod": "api:authMethod",
+    "apiKey": "api:apiKey",
+    "oauthToken": "api:oauthToken",
+    "rateLimit": "api:rateLimit",
+    "pagination": "api:pagination",
+
+    "PlaneAPI": {
+      "@id": "api:PlaneAPI",
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "https://api.plane.so/api/v1/",
+      "@type": "api:APIReference",
+      "schema:name": "Plane REST API",
+      "schema:description": "The Plane REST API provides 180+ endpoints for managing projects, work items, cycles, modules, pages, analytics, and workspace members.",
+      "schema:url": "https://developers.plane.so/api-reference/introduction",
+      "api:baseURL": "https://api.plane.so/api/v1/",
+      "api:authMethod": ["api:apiKey", "api:oauthToken"],
+      "api:rateLimit": "60 requests per minute",
+      "api:pagination": "cursor-based"
+    }
+  ]
+}
