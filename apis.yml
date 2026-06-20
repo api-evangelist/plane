@@ -10,7 +10,7 @@ description: >-
   webhooks for real-time event notifications, and typed SDKs for Python and
   Node.js. Plane also ships an official Model Context Protocol (MCP) server to
   enable AI agents to interact with your workspace programmatically.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/plane/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -36,7 +36,7 @@ apis:
       bodies with predictable resource-oriented URLs. Authentication is
       supported via personal access tokens (X-API-Key header) or OAuth 2.0
       bearer tokens for third-party applications.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://developers.plane.so/api-reference/introduction
     baseURL: https://api.plane.so/api/v1/
     tags:
