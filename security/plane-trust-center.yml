@@ -1,0 +1,19 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://security.plane.so/
+url: https://security.plane.so/
+certifications:
+- SOC 2
+- ISO 27001
+- HIPAA
+- GDPR
+evidence:
+- source: https://security.plane.so/
+  keywords:
+  - soc 2
+  - soc2
+  - iso 27001
+  - hipaa
+  - trust center
+  - gdpr
