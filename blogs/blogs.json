@@ -2,13 +2,14 @@
   "repo": "plane",
   "feeds": [
     {
-      "source": "https://plane.so/blog",
-      "feed_url": "",
+      "source": "https://www.linkedin.com/company/planepowers/",
+      "feed_url": "https://www.linkedin.com/company/planepowers/",
+      "title": "",
       "saved": 0,
-      "method": "agent-scrape"
+      "method": "none"
     }
   ],
-  "fetched": "2026-06-27T13:01:58Z",
+  "fetched": "2026-07-11T11:50:51Z",
   "post_count": 0,
-  "agent_pulled": "2026-06-27"
+  "agent_pulled": "2026-07-04"
 }
